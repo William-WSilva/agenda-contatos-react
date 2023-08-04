@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { BotaoNav } from '../../components/Botao/Botao'
 import lixeira from '../../images/lixeira.png'
 import editar from '../../images/pencil.png'
@@ -7,6 +7,7 @@ import { Bk_Cadastro } from './CadastroStyle'
 import { Contatos } from './Contatos'
 
 export const Cadastro = () => {
+  const [contatosOriginais, setContatosOriginais] = useState(Contatos)
   const [contatos, setContatos] = useState(Contatos)
   const [inputName, setInputName] = useState('')
   const [inputEmail, setInputEmail] = useState('')
@@ -31,7 +32,7 @@ export const Cadastro = () => {
     setSearchTerm(event.target.value)
 
     // Filtrar os contatos com base no searchTerm
-    const filteredContatos = Contatos.filter(
+    const ContatosFiltrados = Contatos.filter(
       (contato) =>
         contato.nomeCompleto
           .toLowerCase()
@@ -40,7 +41,7 @@ export const Cadastro = () => {
     )
 
     // Atualizar o estado dos contatos filtrados
-    setContatos(filteredContatos)
+    setContatos(ContatosFiltrados)
   }
 
   function editarContato(event: React.MouseEvent<HTMLImageElement>) {
@@ -75,27 +76,24 @@ export const Cadastro = () => {
     setContatos(novoContatos)
   }
 
-  function cadastrarNovoContato() {
-    // Verifica se o novo contato já existe na lista pelo nome ou email
-    const contatoExistente = contatos.find(
-      (contato) =>
-        contato.nomeCompleto.toLowerCase() === inputName.toLowerCase() ||
-        contato.email.toLowerCase() === inputEmail.toLowerCase()
-    )
-    if (contatoExistente) {
-      alert('Contato já existente!')
-      return
-    }
-
-    // Caso o contato não exista, adiciona o novo contato ao array de contatos
+  const cadastrarNovoContato = () => {
+    // Adicionar novo contato aos contatos originais
     const novoContato = {
       nomeCompleto: inputName,
       email: inputEmail,
       telefone: inputTel
     }
-    setContatos([...contatos, novoContato])
+    setContatosOriginais([...contatosOriginais, novoContato])
 
-    // limpar os campos do formulário:
+    // Atualizar os contatos filtrados
+    const ContatosFiltrados = contatosOriginais.filter(
+      (contato) =>
+        contato.nomeCompleto.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        contato.email.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    setContatos(ContatosFiltrados)
+
+    // Limpar os campos do formulário após cadastrar
     setInputName('')
     setInputEmail('')
     setInputTel('')
@@ -111,6 +109,15 @@ export const Cadastro = () => {
     liElements?.forEach((liItem) => liItem.classList.remove('active'))
     liElement?.classList.add('active')
   }, [key, contatos])
+
+  useEffect(() => {
+    const ContatosFiltrados = contatosOriginais.filter(
+      (contato) =>
+        contato.nomeCompleto.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        contato.email.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    setContatos(ContatosFiltrados)
+  }, [searchTerm, contatosOriginais])
 
   return (
     <Bk_Cadastro>

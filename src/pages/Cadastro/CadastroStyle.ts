@@ -52,6 +52,7 @@ export const SecaoAgendaCabecalho = styled.div`
 
   & > input {
     width: 200px;
+    margin-bottom: 4px;
   }
 
   label {

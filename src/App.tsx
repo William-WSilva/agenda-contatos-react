@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Container, EstiloGlobal } from './styles/styles'
+import { EstiloGlobal } from './styles/styles'
 import { Home } from './pages/Home/Home'
 import { Cadastro } from './pages/Cadastro/Cadastro'
 
