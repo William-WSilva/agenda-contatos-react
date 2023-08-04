@@ -22,12 +22,13 @@ span{
   cursor: pointer;
 
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-around;
   justify-content: start;
-  align-self: flex-start;
+  align-self: center;
   padding-left: 40px;
-  border: 1px solid transparent;
+  border: 1px dashed transparent;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -36,4 +37,8 @@ span{
 
 div{
   overflow-y: auto;
+  scale:calc(0.5) ;
+  word-spacing: 1px;
+  justify-items: center;
+  justify-self: center;
 }
