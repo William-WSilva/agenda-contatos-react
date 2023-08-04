@@ -1,0 +1,39 @@
+*{
+  color: #fff;
+  color: #000;
+  height: 100vh;
+  width: 100vh;
+  background-color: #000;
+  background-image: url('../src/images/bk_Home.png');
+  background-size: 100vw;
+  background-repeat: no-repeat;
+}
+
+span{
+  text-align: center;
+  height: 320px;
+  align-items: center;
+  font-weight: bold;
+  background-image: linear-gradient(#000, #222);
+  opacity: 0.5;
+  border-bottom: 1px dashed #fff;
+  margin-top: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-content: start;
+  align-self: flex-start;
+  padding-left: 40px;
+  border: 1px solid transparent;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+div{
+  overflow-y: auto;
+}
