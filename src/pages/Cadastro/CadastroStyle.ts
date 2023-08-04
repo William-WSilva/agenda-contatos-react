@@ -21,6 +21,7 @@ export const SectionButton = styled.div`
 
 export const Titulo = styled.h2`
   font-size: 40px;
+  color: ${variaveis.amareloTema};
 `
 export const SecaoAgenda = styled.div`
   width: 50%;
@@ -32,33 +33,115 @@ export const SecaoAgenda = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border-radius: 8px;
+  input {
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    padding-left: 4px;
+  }
 `
 export const SecaoAgendaCabecalho = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 40px 220px 220px 220px 2fr;
+  position: relative;
+
   font-size: 24px;
+  font-weight: bold;
+
+  & > input {
+    width: 200px;
+  }
+
+  label {
+    font-size: 18px;
+    display: block;
+    position: absolute;
+    top: -22px;
+    right: 80px;
+    color: ${variaveis.amareloTema};
+  }
+`
+
+export const BtnContato = styled.button`
+  height: 30px;
+  width: 80px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: ${variaveis.branco};
+  box-shadow: 0px 0px 2px 0px ${variaveis.amareloTema};
+  background: linear-gradient(
+    180deg,
+    ${variaveis.pretoTemaEscuro},
+    ${variaveis.pretoTemaClaro}
+  );
+
+  &:hover {
+    color: ${variaveis.amareloTema};
+    background: linear-gradient(
+      180deg,
+      ${variaveis.pretoTemaClaro},
+      ${variaveis.pretoTemaEscuro}
+    );
+  }
+`
+
+export const SecaoAgendaInput = styled.div`
+  display: grid;
+  grid-template-columns: 40px 220px 220px 220px 90px 90px;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  input {
+    width: 180px;
+  }
 `
 
 export const SecaoAgendaContatos = styled.div`
   width: 100%;
   height: 100%;
+  overflow-y: auto;
 `
 
-export const SecaoAgendaContatosLista = styled.ul`
+export const SecaoAgendaContatosLista = styled.ol`
   font-size: 18px;
   border: 1px solid ${variaveis.pretoTemaClaro};
-  overflow-y: auto;
 
   li {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 40px 220px 220px 220px 90px 90px;
     height: 40px;
-    padding-top: 8px;
-    border-top: 1px solid ${variaveis.cinza};
+    border-bottom: 1px solid ${variaveis.cinza};
+    align-items: center;
+
+    img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      justify-self: center;
+      &:hover {
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px 0px ${variaveis.amareloTema};
+      }
+    }
 
     &:hover {
-      border: 2px solid ${variaveis.cinza};
-      cursor: pointer;
+      font-weight: bold;
+      font-size: 20px;
+      border-bottom: 1px solid ${variaveis.branco};
+      cursor: default;
     }
+  }
+
+  .active {
+    color: ${variaveis.amareloTema};
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 1px solid ${variaveis.amareloTema};
   }
 `

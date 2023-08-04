@@ -18,6 +18,7 @@ export const Botao = styled.button`
     );
 
     &:hover {
+      color: ${variaveis.amareloTema};
       background: linear-gradient(
         180deg,
         ${variaveis.pretoTemaClaro},

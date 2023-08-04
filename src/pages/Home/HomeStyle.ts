@@ -56,6 +56,11 @@ export const BannerHome = styled.section`
     ${variaveis.pretoTemaEscuro},
     ${variaveis.pretoTemaClaro}
   );
+
+  h2 {
+    color: ${variaveis.amareloTema};
+    font-size: 32px;
+  }
 `
 
 export const BannerDivLogo = styled.section`
@@ -73,7 +78,7 @@ export const BannerLin = styled.div`
 
     &:hover {
       align-self: flex-end;
-      border-bottom: 10px dashed ${variaveis.branco};
+      border-bottom: 10px dashed ${variaveis.amareloTema};
     }
   }
 
@@ -112,7 +117,7 @@ export const BannerDivDecoration = styled.div`
 
     &:hover {
       align-self: flex-end;
-      border-bottom: 10px dashed ${variaveis.branco};
+      border-bottom: 10px dashed ${variaveis.amareloTema};
     }
   }
 `
