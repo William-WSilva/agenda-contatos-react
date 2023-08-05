@@ -111,6 +111,7 @@ export const Cadastro = () => {
   }, [key, contatos])
 
   useEffect(() => {
+    // Atualizar os contatos filtrados sempre que houver uma alteração no searchTerm ou contatosOriginais
     const ContatosFiltrados = contatosOriginais.filter(
       (contato) =>
         contato.nomeCompleto.toLowerCase().includes(searchTerm.toLowerCase()) ||
