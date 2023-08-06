@@ -14,14 +14,18 @@ export const Bk_Home = styled.section`
   align-items: center;
 
   section > div {
-    text-align: end;
     margin-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: 0px;
   }
 `
 export const Titulo = styled.section`
   color: ${variaveis.branco};
-  font-size: 80px;
-  width: 580px;
+  font-size: 60px;
+  width: 420px;
   height: 240px;
   margin-right: 140px;
 
@@ -35,13 +39,26 @@ export const Titulo = styled.section`
     &:nth-child(3) {
       text-align: end;
     }
+    @media (max-width: 768px) {
+      font-size: 32px;
+      display: inline-block;
+
+      margin-right: 12px;
+    }
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    margin: 0px;
+    margin-bottom: 20px;
   }
 `
 
 export const BannerHome = styled.section`
-  width: 540px;
-  height: 680px;
-  padding: 20px;
+  width: 340px;
+  height: 440px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,8 +90,9 @@ export const BannerLin = styled.div`
 
   div {
     border-bottom: 5px solid ${variaveis.branco};
-    height: 30px;
-    margin-top: 16px;
+    height: 8px;
+    margin-top: 12px;
+    margin-bottom: 20px;
 
     &:hover {
       align-self: flex-end;
@@ -91,8 +109,8 @@ export const BannerLin = styled.div`
 `
 
 export const BannerLogo = styled.div`
-  width: 180px;
-  height: 180px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: ${variaveis.branco};
   background-image: url(${HomeBannerLogo});

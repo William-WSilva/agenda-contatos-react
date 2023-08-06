@@ -1,5 +1,6 @@
 // backup
 import React, { useState, useRef } from 'react'
+import { btnLink as Link } from '../../components/Botao/BotaoStyle'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store/store'
 import {
@@ -7,7 +8,6 @@ import {
   removerContato,
   alterarContato
 } from '../../store/reducers/contatosSlice'
-import { BotaoNav } from '../../components/Botao/Botao'
 import lixeira from '../../images/lixeira.png'
 import editar from '../../images/pencil.png'
 import * as C from './CadastroStyle'
@@ -133,7 +133,7 @@ export const Cadastro = () => {
         </C.SecaoAgendaContatos>
       </C.SecaoAgenda>
       <C.SectionButton>
-        <BotaoNav Children={'Home'}></BotaoNav>
+        <Link to="/">Home</Link>
       </C.SectionButton>
     </Bk_Cadastro>
   )

@@ -1,10 +1,14 @@
 import { styled } from 'styled-components'
 import variaveis from '../../styles/variaveis'
+import { Link } from 'react-router-dom'
 
-export const Botao = styled.button`
+export const btnLink = styled(Link)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40px;
-    width: 150px;
-    font-size: 18px;
+    width: 140px;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 8px;
@@ -27,3 +31,4 @@ export const Botao = styled.button`
     }
   }
 `
+export { Link }

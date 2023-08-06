@@ -1,7 +1,9 @@
-import { Botao } from './BotaoStyle'
+import { Link } from './BotaoStyle'
 
 type Props = {
   Children: string
 }
 
-export const BotaoNav = ({ Children }: Props) => <Botao>{Children}</Botao>
+export const BotaoNavs = ({ Children }: Props) => (
+  <Link to={''}>{Children}</Link>
+)

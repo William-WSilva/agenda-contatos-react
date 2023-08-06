@@ -1,4 +1,4 @@
-import { BotaoNav } from '../../components/Botao/Botao'
+import { btnLink as Link } from '../../components/Botao/BotaoStyle'
 import {
   Bk_Home,
   Titulo,
@@ -9,37 +9,39 @@ import {
   BannerDivDecoration
 } from './HomeStyle'
 
-export const Home = () => (
-  <>
-    <Bk_Home>
-      <Titulo>
-        <span>Agenda</span>
-        <span>de</span>
-        <span>Contatos</span>
-      </Titulo>
-      <section>
-        <BannerHome>
-          <h2>Contacts</h2>
-          <BannerDivLogo>
-            <BannerLogo></BannerLogo>
-            <BannerLin>
+export const Home = () => {
+  return (
+    <>
+      <Bk_Home>
+        <Titulo>
+          <span>Agenda</span>
+          <span>de</span>
+          <span>Contatos</span>
+        </Titulo>
+        <section>
+          <BannerHome>
+            <h2>Contacts</h2>
+            <BannerDivLogo>
+              <BannerLogo></BannerLogo>
+              <BannerLin>
+                <div></div>
+                <div></div>
+                <div></div>
+              </BannerLin>
+            </BannerDivLogo>
+            <BannerDivDecoration>
               <div></div>
               <div></div>
               <div></div>
-            </BannerLin>
-          </BannerDivLogo>
-          <BannerDivDecoration>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </BannerDivDecoration>
-        </BannerHome>
-        <div>
-          <BotaoNav Children={'Acessar'}></BotaoNav>
-        </div>
-      </section>
-    </Bk_Home>
-  </>
-)
+              <div></div>
+              <div></div>
+            </BannerDivDecoration>
+          </BannerHome>
+          <div>
+            <Link to="/cadastro">Acessar</Link>
+          </div>
+        </section>
+      </Bk_Home>
+    </>
+  )
+}
